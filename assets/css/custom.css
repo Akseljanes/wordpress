@@ -46,7 +46,7 @@ p.lead {
     font-weight: normal;
 }
 
-a:link a:visited {
+a:link, a:visited {
     color: #dd5638;
 }
 
@@ -117,7 +117,7 @@ img {
 
 .badge.social.gplus:hover {
     background: #db4b39;
-    
+
 }
 
 blockquote {
