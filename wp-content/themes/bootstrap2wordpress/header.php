@@ -10,7 +10,7 @@
  */
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,10 +18,10 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<!-- Bootstrap core css -->
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet-directory'); ?> /assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/bootstrap.min.css">
 
 	<!-- FontAwesome Icons -->
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet-directory'); ?> /assets/css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/font-awesome/css/font-awesome.min.css">
 
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
@@ -54,24 +54,22 @@
 							<span class="icon-bar"></span>
 						</button>
 
-						<a class="navbar-brand" href="/"> <img src="assets/img/logo.png" alt="Bootstrap to WordPress"></a>
+						<a class="navbar-brand" href="/"> <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo.png" alt="Bootstrap to WordPress"></a>
 					</div>
 
 					<?php
-						wp_nav_menu( array(
-
-								'theme_location' 	=> 'primary',
-								'container' 		=> 'nav',
-								'container-class'	=> 'navbar-collapse collapse',
-								'menu-class'		=> 'nav navbar-nav navbar-right'
-
-
-						));
+					wp_nav_menu(array(
+							'theme_location' => 'primary',
+							'container'      => 'nav',
+							'container_class'=> 'navbar-collapse collapse',
+							'menu_class'     => 'nav navbar-nav navbar-right'
+						)
+					);
 					?>
-
 
 				</div>
 			</div>
 		</div>
 	</header>
+</div>
 
