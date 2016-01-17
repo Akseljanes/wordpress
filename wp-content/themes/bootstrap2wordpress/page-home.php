@@ -45,9 +45,7 @@ get_header(); ?>
                     </div>
 
                     <p><a class="btn btn-lg btn-danger" href="<?php echo $course_url; ?>" role="button"><?php echo $button_text; ?></a></p>
-
                 </div>
-
             </div>
         </div>
     </article>
