@@ -306,50 +306,30 @@ get_header(); ?>
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
                 <h2>What people are saying about Brad</h2>
+                <?php $loop = new WP_Query( array('post_type' => 'testimonial', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
 
-                <div class="row testimonial">
-                    <div class="col-sm-4">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/brennan.jpg" alt="Brennan">
-                    </div>
-                    <div class="col-sm-8">
-                        <blockquote>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis cumque cupiditate debitis doloremque ea eligendi ipsa ipsam, maxime perferendis perspiciatis praesentium provident quis quisquam rem repellat repellendus rerum sit! <cite> &mdash; Brennan, graduate of all bra's courses</cite>
-                        </blockquote>
-                    </div>
-                </div>
+                <?php while($loop->have_posts()) : $loop->the_post(); ?>
 
-                <div class="row testimonial">
-                    <div class="col-sm-4">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ben.png" alt="Ben">
-                    </div>
-                    <div class="col-sm-8">
-                        <blockquote>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis cumque cupiditate debitis doloremque ea eligendi ipsa ipsam, maxime perferendis perspiciatis praesentium provident quis quisquam rem repellat repellendus rerum sit! <cite> &mdash; Ben, graduate of all bra's courses</cite>
-                        </blockquote>
-                    </div>
-                </div>
+                    <div class="row testimonial">
+                        <div class="col-sm-4">
+                            <?php
 
-                <div class="row testimonial">
-                    <div class="col-sm-4">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/aj.png" alt="Aj">
-                    </div>
-                    <div class="col-sm-8">
-                        <blockquote>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis cumque cupiditate debitis doloremque ea eligendi ipsa ipsam, maxime perferendis perspiciatis praesentium provident quis quisquam rem repellat repellendus rerum sit! <cite> &mdash; Aj, graduate of all bra's courses</cite>
-                        </blockquote>
-                    </div>
-                </div>
+                                if (has_post_thumbnail()) {
+                                    the_post_thumbnail(array(200,200));
+                                }
 
-                <div class="row testimonial">
-                    <div class="col-sm-4">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ernest.png" alt="Ernest">
+                            ?>
+                        </div>
+                        <div class="col-sm-8">
+                            <blockquote>
+                                <?php the_content(); ?>
+                                <cite> &mdash; <?php the_title(); ?></cite>
+                            </blockquote>
+                        </div>
                     </div>
-                    <div class="col-sm-8">
-                        <blockquote>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis cumque cupiditate debitis doloremque ea eligendi ipsa ipsam, maxime perferendis perspiciatis praesentium provident quis quisquam rem repellat repellendus rerum sit! <cite> &mdash; Ernest, graduate of all bra's courses</cite>
-                        </blockquote>
-                    </div>
-                </div>
+
+                <?php endwhile; ?>
+
             </div>
         </div>
     </div>
