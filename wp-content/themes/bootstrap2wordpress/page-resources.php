@@ -3,12 +3,25 @@
  Template Name: Resources page
 */
 
+get_header();
+
+$thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id( $post->ID) );
 ?>
 
 <!-- FEATURE IMAGE -->
-<section class="feature-image feature-image-default" data-type="background" data-speed="2">
-    <h1 class="page-title">Resources</h1>
+<?php if( has_post_thumbnail() ) { //check for feature image?>
+
+<section class="feature-image" style="background: url('<?php echo $thumbnail_url; ?>') no-repeat; background-size: cover;" data-type="background" data-speed="2">
+    <h1 class="page-title"><?php the_title(); ?></h1>
 </section>
+
+<?php } else { //fall-back image ?>
+
+<section class="feature-image feature-image-default" data-type="background" data-speed="2">
+    <h1 class="page-title"><?php the_title(); ?></h1>
+</section>
+
+<?php } ?>
 
 <!-- MAIN CONTENT -->
 
@@ -51,3 +64,8 @@
         </div>
     </div>
 </div>
+
+<?php
+
+get_footer();
+?>
