@@ -211,6 +211,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	max-width: 100%;
 }
 
+/* Search widget */
+.widget_search .search-submit {
+	display: none;
+}
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -913,7 +917,21 @@ footer li.signup-link a:hover {
 #leave-comment {
 	margin: 40px 0 0;
 	padding: 20px 0 0;
+}
 
+/* specific wordpress comment styles */
+
+#comments footer {
+	background: none;
+	color: inherit;
+}
+
+#comments footer a {
+	color: inherit;
+}
+
+#comments .comment-metadata {
+	margin: 10px 0 0;
 }
 
 /* RESOURCES */
