@@ -410,6 +410,10 @@ h1 {
 	font-size: 3em;
 }
 
+h1 small {
+	color: white;
+}
+
 h2,h3 {
 	margin: 0 0 40px;
 }

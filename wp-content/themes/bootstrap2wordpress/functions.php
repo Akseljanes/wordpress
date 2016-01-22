@@ -159,3 +159,17 @@ function new_excerpt_more($more) {
 	return '...<a class="moretag" href="'.get_permalink($post -> ID).'"> continue reading &raquo; </a>';
 }
 add_filter('excerpt_more','new_excerpt_more');
+
+
+/**
+ * Removes the "Category: " text from in front of category tags
+ */
+function remove_category_preface( $title ) {
+	if( is_category() ) {
+		$title = single_cat_title( '', false );
+	}
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'remove_category_preface' );
+
+?>
